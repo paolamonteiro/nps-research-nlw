@@ -1,11 +1,11 @@
 import { Request, Response } from 'express';
-import { getRepository } from 'typeorm';
-import { User } from '../models/User';
+import { getCustomRepository } from 'typeorm';
+import { UsersRepository } from '../repositories/UsersRepository';
 
 class UserController {
   async create(request: Request, response: Response) {
     const { name, email } = request.body;
-    const usersRepository = getRepository(User);
+    const usersRepository = getCustomRepository(UsersRepository);
 
     // SELECT * FROM USERS WHERE EMAIL = EMAIL
     const userAlreadyExists = await usersRepository.findOne({
@@ -22,7 +22,26 @@ class UserController {
 
     await usersRepository.save(user);
 
-    return response.json(user);
+    return response.status(201).json(user);
+  }
+
+  async getAll(request: Request, response: Response) {
+    const usersRepository = getCustomRepository(UsersRepository);
+
+    // SELECT * FROM USERS
+    const allUsers = await usersRepository.find();
+    return response.json(allUsers);
+  }
+
+  async deleteAllUsers(request: Request, response: Response) {
+    const usersRepository = getCustomRepository(UsersRepository);
+
+    // SELECT * FROM USERS
+    const allUsers = await usersRepository.find();
+
+    // DELETE * FROM USERS
+    await usersRepository.remove(allUsers);
+    return response.sendStatus(200);
   }
 }
 
