@@ -8,3 +8,11 @@ Next Level Week #04 - Node trail project
 - move to api/
 - run `npm install` or `yarn install`
 - run `npm run dev` or `yarn dev`
+
+#### Main Tools:
+
+- Typescript
+- Node.js
+- Express
+- Sqlite3
+- TypeORM
