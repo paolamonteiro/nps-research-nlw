@@ -9,6 +9,10 @@ Next Level Week #04 - Node trail project
 - run `npm install` or `yarn install`
 - run `npm run dev` or `yarn dev`
 
+#### To run tests:
+
+- run `npm run test` or `yarn test`
+
 #### Main Tools:
 
 - Typescript
