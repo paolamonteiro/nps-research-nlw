@@ -20,5 +20,7 @@ Next Level Week #04 - Node trail project
 - Express
 - Sqlite3
 - TypeORM
+- Nodemailer
+- Ethereal
 - Jest
 - Supertest
