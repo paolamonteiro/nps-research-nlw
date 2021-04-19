@@ -22,5 +22,6 @@ Next Level Week #04 - Node trail project
 - TypeORM
 - Nodemailer
 - Ethereal
+- Handlebars
 - Jest
 - Supertest
