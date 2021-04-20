@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { getCustomRepository } from 'typeorm';
 import { SurveysRepository } from '../repositories/SurveysRepository';
 import * as yup from 'yup';
+import { AppError } from '../errors/AppError';
 
 class SurveyController {
   async create(request: Request, response: Response) {
@@ -13,7 +14,7 @@ class SurveyController {
     });
 
     if (!(await schema.isValid(request.body))) {
-      return response.status(400).json({ error: 'Validation failed!' });
+      throw new AppError('Validation failed!');
     }
 
     const surveysRepository = getCustomRepository(SurveysRepository);
