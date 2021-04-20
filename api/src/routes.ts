@@ -4,7 +4,7 @@ import { NpsController } from './controllers/NpsController';
 import { SendMailController } from './controllers/SendMailController';
 import { SurveyController } from './controllers/SurveyController';
 import { UserController } from './controllers/UserController';
-94506015;
+
 const router = Router();
 
 const userController = new UserController();
