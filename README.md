@@ -23,5 +23,6 @@ Next Level Week #04 - Node trail project
 - Nodemailer
 - Ethereal
 - Handlebars
+- Yup
 - Jest
 - Supertest
